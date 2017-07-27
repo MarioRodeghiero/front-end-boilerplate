@@ -18,6 +18,7 @@ gulp.task('copy', ['clean'], function() {
         .pipe(gulp.dest('dist'));
 });
 
+
 // tarefa para apagar
 gulp.task('clean', function( ) {
     return gulp.src('dist') // retorna uma stream dizendo que finalizou a tarefa "assincrona"
