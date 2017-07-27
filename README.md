@@ -1,1 +1,1 @@
-# example-save-the-date
+# boiler-plate
