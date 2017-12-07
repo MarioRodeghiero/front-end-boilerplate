@@ -18,13 +18,11 @@ gulp.task('copy', ['clean'], function() {
         .pipe(gulp.dest('dist'));
 });
 
-
 // tarefa para apagar
 gulp.task('clean', function( ) {
     return gulp.src('dist') // retorna uma stream dizendo que finalizou a tarefa "assincrona"
         .pipe(clean());
 });
-
 
 // Tarefa para reduzir imagens
 gulp.task('build-img', function() {
@@ -32,7 +30,6 @@ gulp.task('build-img', function() {
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'));
 });
-
 
 // Tarefa que aplica o uglify e mimifica os arquivos css e js, onde apontados no arquivo html
 gulp.task('usemin', function() {
@@ -61,8 +58,7 @@ gulp.task('server', function() {
             .pipe(jshint.reporter(jshintStylish));
     });
 
-     gulp.watch('src/css/**/*.css').on('change', function(event) { // verifica erros nos arquivos .css
-         console.log("Linting " + event.path);
+     gulp.watch('src/css/**/*.css').on('change', function(event) { 
          gulp.src(event.path)
              .pipe(csslint())
              .pipe(csslint.formatter());
@@ -77,8 +73,6 @@ gulp.task('server', function() {
             .pipe(gulp.dest('src/css'));
     });  
 });
-
-
 
 //Tarefa default
 gulp.task('default', ['copy'], function() {
